@@ -1,0 +1,400 @@
+/* FONT */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    background: black;
+    overflow: hidden;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* INVERSE CIRCLE CURSOR SETTINGS*/
+#cursor {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: white;
+    mix-blend-mode: difference;
+    pointer-events: none;
+    z-index: 9999; 
+  }
+
+/* TURN OFF CIRCLE CURSOR FOR MOBILE */
+@media (max-width:768px) {
+    #cursor{
+        display: none;
+    }
+}
+
+/* CHEYNE BRINKWORTH TEXT HEADER*/
+.nav-container {
+    display: flex;
+    align-items: center;
+}
+
+/* NAVBAR SETTINGS IN HEADER */
+#nav-menu {
+    display: flex;
+    list-style: none;
+    margin-right: 20px;
+}
+
+.nav-item {
+    margin: 10px 10px; 
+    color: white;
+}
+
+.nav-branding {
+    color: white;
+    text-decoration: none;
+    font-size: 2.5rem; 
+    padding-left: 20px;
+    padding-bottom: 0px;
+}
+
+#nav-menu .nav-item .nav-link {
+    color: white;
+    text-decoration: none;
+    border: 2px solid white;
+    border-radius: 5px;
+    display: inline-block;
+    padding: 10px 20px;
+    transition-duration: 0.4s;
+    text-decoration: none;
+}
+
+#nav-menu .nav-item .nav-link:hover {
+    transform: scale(1.02);
+}
+
+.navbar {
+    min-height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    }
+
+/* HABURGER SETTINGS TURN OFF FOR DESKTOP */
+#hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 20px;
+    height: 2px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: white;
+}
+
+/* HAMBURGER SETTINGS TURN ON FOR MOBILE */
+@media(max-width:768px) {
+    .navbar {
+        flex-direction: row; 
+        justify-content: space-between; 
+    }
+
+    .nav-branding {
+        color: white;
+        text-decoration: none;
+        font-size: 2rem;
+        padding-left: 20px;
+    }
+    
+
+    #hamburger {
+        display: flex; 
+    }
+}
+
+.bar{
+    display: block;
+    width: 20px;
+    height: 2px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: white;
+}
+
+@media(max-width:768px){
+    #hamburger {
+        display: block;
+        position: fixed;
+        top: 20px;
+        right: 35px;
+        cursor: pointer;
+    }
+
+    #hamburger .bar {
+        display: block;
+        width: 20px;
+        height: 2px;
+        margin: 5px auto;
+        transition: all 0.3s ease-in-out;
+        background-color: white;
+    }
+
+    /* HAMBURGER ACTIVE STYLE */
+    #hamburger.active .bar:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    #hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    #hamburger.active .bar:nth-child(3) {
+        transform: translateY(-6px) rotate(-45deg);
+    }
+
+    #nav-menu {
+        position: fixed;
+        left: 100%;
+        top: 70px;
+        gap: 20px;
+        flex-direction: column;
+        background-color: black;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        color: white;
+        list-style: none;
+        z-index: 1000;
+    }
+
+    .nav-item {
+        margin: 0;
+        color: white;
+    }
+
+    #nav-menu.active {
+        left: 0;
+    }
+
+    #nav-menu .nav-item .nav-link {
+        color: white;
+        text-decoration: none;
+        border: 2px solid white;
+        display: inline-block;
+        padding: 10px 20px;
+        transition-duration: 0.4s;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+}
+
+/*POSITION OF LANDING PAGE TEXT*/
+.landing-page-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    padding: 100px 20px 0;
+}
+
+.intro-text {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.intro-text h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 5rem;
+    color: white;
+}
+
+/* SUBTITLE POSITIONING */
+.subtitle {
+    text-align: center;
+}
+
+.subtitle h4 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 20px;
+    color: white;
+}
+
+/* MOBILE SUBTITLE VIEW TEXT */
+@media (min-width: 768px) {
+    .subtitle {
+        text-align: left;
+    }
+}
+
+/* ABOUT ME BUTTON */
+.about-button {
+    height: 2rem;
+    width: 8rem;
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+    border-radius: 5px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    font-size: 1rem;
+    line-height: 2rem;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+    padding: 0px;
+}
+
+.about-button:hover {
+    transform: scale(1.02);
+}
+
+/* SOCIAL MEDIA BUTTONS IN FOOTER */
+.social-media {
+    position: fixed;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.social-media ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-media ul li {
+    margin: 0 5px;
+}
+
+.social-media ul li a {
+    display: block;
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 2px;
+    box-sizing: border-box;
+    text-decoration: none;
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(0deg, #ddd, #fff);
+    transition: 0.3s ease-out;
+    border-radius: 5px;
+}
+
+.social-media ul li a:hover {
+    transform: scale(1.05);
+}
+
+.social-media ul li a img {
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    transition: 0.3s ease-out;
+}
+
+/*FADED IMAGE IN FOOTER*/
+.faded-image-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.gradient-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 1));
+}
+
+.faded-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    opacity: 0.5;
+}
+
+/* ABOUT ME PAGE STARTS */
+.about-me-section {
+    display: flex;
+    justify-content: center;
+    margin-top: 200px; 
+    margin-bottom: 50px;
+}
+
+.about-me-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    max-width: 800px;
+}
+
+.about-me-image,
+.about-me-paragraph {
+    flex: 1;
+}
+
+.about-me-image {
+    padding: 20px;
+    margin-right: 10px;
+}
+
+.about-me-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.about-me-paragraph {
+    padding: 20px;
+    margin-left: 10px;
+}
+
+.about-me-paragraph p {
+    color: white;
+    margin-bottom: 20px;
+}
+
+.highlight {
+    color: #007bff; /* Dark blue color */
+    font-weight: 600; /* Semi-bold */
+    font-size: 1.4rem;
+}
+
+@media (max-width: 768px) {
+    .about-me-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-me-image {
+        display: none;
+    }
+
+    .about-me-paragraph {
+        margin-left: 0;
+        text-align: center;
+    }
+    .about-me-section {
+        margin-top: 20px;
+        margin-bottom: 20px; 
+    }
+}
